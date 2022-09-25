@@ -34,10 +34,8 @@
                     default:
                         Informacion.Direcciones_Invalidas();
                         break;
-
                 }
             }
-
         }
     }
 }

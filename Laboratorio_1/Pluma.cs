@@ -44,6 +44,7 @@ namespace Laboratorio_1
         public override string ToString()
         {
             return String.Format("La pluma está {0}", Accion_Pluma == Acciones_Pluma.Abajo ? "Dibujando" : "No dibujando");
+            
         }
     }
     

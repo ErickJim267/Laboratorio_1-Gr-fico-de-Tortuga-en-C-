@@ -15,22 +15,19 @@ namespace Laboratorio_1
             PosX = 0;
             PosY = 0;
             Mover = 0;
-
         }
         public char Simbolo_Tortuga { get; set; }
-
         public int PosX { get; set; }
-
         public int PosY { get; set; }
-
         public int Mover { get; set; }
 
-        //Calculado por la direccion seleccionada , numero de espacios y la accion de la pluma
+        //Calculado por la direccion seleccionada, número de espacios y la accion de la pluma
         public void Caminar(Todas_Direcciones.Direcciones direccion, int espacios, Pluma.Acciones_Pluma pluma)
         {
             if (Validacion_Movimiento(direccion, espacios) )
             {
                 var Dibujar = (pluma == Pluma.Acciones_Pluma.Abajo);
+                Console.WriteLine(Dibujar);//Acá trato de mostrar el estado de la tortuga siempre ya sea que dibuje o no
 
                 switch (direccion) 
                 {
@@ -44,11 +41,11 @@ namespace Laboratorio_1
                         break;
                     case Todas_Direcciones.Direcciones.Derecha:
                         if (Dibujar) Piso.Actualizar_PisoY(PosY, espacios, +1, PosX);
-                        PosY -= espacios;
+                        PosY += espacios;
                         break;
                     case Todas_Direcciones.Direcciones.Izquierda:
                         if (Dibujar) Piso.Actualizar_PisoY(PosY, espacios, -1, PosX);
-                        PosY += espacios;
+                        PosY -= espacios;
                         break;
                 };
             }
@@ -77,7 +74,6 @@ namespace Laboratorio_1
                 Informacion.Movimiento_Invalido(direccion, PosX);
                 return false;
             }
-
             return true;
         }
     }

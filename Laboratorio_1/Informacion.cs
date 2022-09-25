@@ -6,15 +6,13 @@ namespace Laboratorio_1
     {
         public static void Instrucciones()
         {
-            Console.WriteLine("Digite el comando de su elección para jugar con la Tortuga");
+            Console.WriteLine("Hola! Digite los números de su elección para jugar con la Tortuga!");
             Console.WriteLine("1 - Pluma Arriba, 2 - Pluma Abajo");
-            Console.WriteLine("8 - Arriba, 5 - Abajo");
-            Console.WriteLine("4 - Izquierda, 6 - Derecha");
-            Console.WriteLine("5,X - Digite una cantidad menor a 30 para que la tortuga avance");
+            Console.WriteLine("8 - Arriba, 5 - Abajo, 4 - Izquierda, 6 - Derecha");
+            Console.WriteLine("Por ejemplo: 5,X - Recuerde digitar una cantidad menor a 30 para que la tortuga avance");
             Console.WriteLine("7 - Imprimir datos del tablero");
             Console.WriteLine("9 - Finalizar");
             //Console.WriteLine("");
-
         }
         //Manejo de errores
         public static string MsjError { get; set; }
@@ -23,7 +21,6 @@ namespace Laboratorio_1
         {
             MsjError = "\nAcción de juego inválida! Por favor pruebe de nuevo usando 1 = Arriba o 2 = Abajo! (n_n) \n";
         }
-
         public static void Direcciones_Invalidas()
         {
             MsjError = "\nPor favor ingrese valores permitidos para realizar el movimiento! (n_n) \n";
@@ -38,7 +35,7 @@ namespace Laboratorio_1
         }
         public static void Movimiento_Invalido(Todas_Direcciones.Direcciones direccion, int espacios)
         {
-            MsjError = String.Format("\nMovimiento Inválido! Sólo puede moverese {0} espacios hacia {1}\n", espacios, direccion);
+            MsjError = String.Format("\nMovimiento Inválido! Puede moverese {0} espacios hacia {1}\n", espacios, direccion);
         }
     }
 }
